@@ -15,15 +15,15 @@ export class HomeComponent { }
 
 @Component({
   template: `
-    <h2>Hello {{name$ | async}}!</h2>
+    <h2>Hello {{name | async}}!</h2>
     <p>I am a sample component.</p>
   `
 })
 export class NameComponent {
-  name$: Observable<string>;
+  name: Observable<string>;
 
   constructor(route: ActivatedRoute) {
-    this.name$ = route.params.pipe(map(params => params['name']));
+    this.name = route.params.pipe(map(params => params['name']));
   }
 }
 
