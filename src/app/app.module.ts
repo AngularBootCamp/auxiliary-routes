@@ -7,7 +7,7 @@ import { BlueBoxComponent, ChatComponent, HomeComponent, NameComponent, TaskComp
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent },
   { path: 'hello/:name', component: NameComponent },
   { path: 'blue', component: BlueBoxComponent },
 
@@ -26,7 +26,10 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, {
+      useHash: true,
+      scrollPositionRestoration: 'enabled'
+    })
   ],
   bootstrap: [AppComponent]
 })
