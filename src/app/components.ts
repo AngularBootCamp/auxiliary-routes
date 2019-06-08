@@ -11,11 +11,11 @@ import { map } from 'rxjs/operators';
     <p>This is a simple example component.</p>
   `
 })
-export class HomeComponent { }
+export class HomeComponent {}
 
 @Component({
   template: `
-    <h2>Hello {{name | async}}!</h2>
+    <h2>Hello {{ name | async }}!</h2>
     <p>I am a sample component.</p>
   `
 })
@@ -23,7 +23,9 @@ export class NameComponent {
   name: Observable<string>;
 
   constructor(route: ActivatedRoute) {
-    this.name = route.params.pipe(map(params => params['name']));
+    this.name = route.paramMap.pipe(
+      map(params => params.get('name') as string)
+    );
   }
 }
 
@@ -34,7 +36,7 @@ export class NameComponent {
     </div>
   `
 })
-export class BlueBoxComponent { }
+export class BlueBoxComponent {}
 
 // Components used in the side outlet
 
@@ -45,7 +47,7 @@ export class BlueBoxComponent { }
     </div>
   `
 })
-export class ChatComponent { }
+export class ChatComponent {}
 
 @Component({
   template: `
@@ -54,4 +56,4 @@ export class ChatComponent { }
     </div>
   `
 })
-export class TaskComponent { }
+export class TaskComponent {}

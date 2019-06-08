@@ -3,7 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BlueBoxComponent, ChatComponent, HomeComponent, NameComponent, TaskComponent } from './components';
+import {
+  BlueBoxComponent,
+  ChatComponent,
+  HomeComponent,
+  NameComponent,
+  TaskComponent
+} from './components';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,4 +39,4 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
